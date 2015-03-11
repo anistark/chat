@@ -1,17 +1,23 @@
 extends layouthome
 
 block content
-    h1= title
 
-    // Wrapper
-    #wrapper
-        // Sidebar
-        #sidebar-wrapper
-            
-        // /Sidebar
+	// Wrapper
+	#wrapper
+		// Sidebar
+		#sidebar-wrapper
+			ul.sidebar-nav
+				li.sidebar-brand
+					<a href="#">UserName</a>
+		// /Sidebar
 
-        // Page Content
-        	
-        // /Page Content
+		// Page Content
+		#page-content-wrapper
+			div.container-fluid
+				div.row
+					div.col-lg-12
+						p
+							<a href="#menu-toggle" class="btn btn-default" id="menu-toggle"><img src="/images/menubutton.png" height="10" width="auto"></a>
+		// /Page Content
+	// /WRAPPER
 
-    // /WRAPPER
