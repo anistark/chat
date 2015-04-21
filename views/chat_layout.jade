@@ -1,0 +1,54 @@
+doctype html
+html(ng-app="myApp")
+    head
+        meta(charset='utf8')
+        meta(http-equiv="content-type" content="text/html; charset=UTF-8")
+        meta(name="generator" content="AniGen")
+        meta(name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1")
+        base(href='/')
+        title Chat App
+        link(rel='stylesheet', href='/css/app.css')
+        link(rel='stylesheet', href='/css/styles.css')
+        link(rel='stylesheet', href='/css/bootstrap.min.css')
+    body
+        nav(class="navbar navbar-fixed-top header")
+            div(class="col-md-12")
+                div(class="navbar-header")
+                    a(href="#" class="navbar-brand") AniTech
+                    button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse1") i(class="glyphicon glyphicon-search")
+
+                div(class="collapse navbar-collapse" id="navbar-collapse1")
+                    ul(class="nav navbar-nav navbar-right")
+                        li: a(href="#" target="_ext") AniTech+
+                        li
+                            a(href="#" class="dropdown-toggle" data-toggle="dropdown"): i(class="glyphicon glyphicon-bell")
+                            ul(class="dropdown-menu")
+                                li: a(href="#"): span(class="badge pull-right") 40 Link
+                                li: a(href="#"): span(class="badge pull-right") 2 Link
+                                li: a(href="#"): span(class="badge pull-right") 0 Link
+                                li: a(href="#"): span(class="label label-info pull-right") 1 Link
+                                li: a(href="#"): span(class="badge pull-right") 14 Link
+                        li: a(href="#" id="btnToggle"): i(class="glyphicon glyphicon-th-large")
+                        li: a(href="#"): i(class="glyphicon glyphicon-user")
+        div(class="navbar navbar-default" id="subnav")
+            div(class="col-md-12")
+                div(class="navbar-header")
+                    a(href="#" style="margin-left:15px;" class="navbar-btn btn btn-default btn-plus dropdown-toggle" data-toggle="dropdown"): i(class="glyphicon glyphicon-home" style="color:#dd1111;") Home
+                    ul(class="nav dropdown-menu")
+                        li: a(href="#") i(class="glyphicon glyphicon-user" style="color:#1111dd;") Profile
+                        li: a(href="#") i(class=""glyphicon glyphicon-dashboard" style="color:#0000aa;") Dashboard
+
+                    button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse2")
+                        span(class="sr-only")
+                        span(class="icon-bar")
+                        span(class="icon-bar")
+                        span(class="icon-bar")
+
+                div(class="collapse navbar-collapse" id="navbar-collapse2")
+                    ul(class="nav navbar-nav navbar-right")
+                        li: a(href="#") Posts
+                        li: a(href="#loginModal" role="button" data-toggle="modal") Login
+                        li: a(href="#aboutModal" role="button" data-toggle="modal") About
+
+        div(class="container" id="main")
+            block content

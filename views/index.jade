@@ -1,53 +1,36 @@
 extends layout
 
-block content
-    h1= title
-    p Welcome to our test
+block body
+  h1 Chat App
+  div(ng-controller='AppCtrl')
+    .col
+      h3 Messages
+      .overflowable
+        p(ng-repeat='message in messages',
+          ng-class='{alert: message.user == "chatroom"}') {{message.user}}: {{message.text}}
 
-    // Wrapper
-    #wrapper
-        // USER INFO
-        #userInfo
-            h2 User Info
-            p
-                strong Name:
-                |  <span id='userInfoName'></span>
-                br
-                strong Age:
-                |  <span id='userInfoAge'></span>
-                br
-                strong Gender:
-                |  <span id='userInfoGender'></span>
-                br
-                strong Location:
-                |  <span id='userInfoLocation'></span>
-        // /USER INFO
+    .col
+      h3 Users
+      .overflowable
+        p(ng-repeat='user in users') {{user}}
 
-        // USER LIST
-        h2 User List
-        #userList
-            table
-                thead
-                    th UserName
-                    th Email
-                    th Delete?
-                tbody
-        // /USER LIST
+    .clr
+      form(ng-submit='sendMessage()')
+        | Message: 
+        input(size='60', ng-model='message')
+        input(type='submit', value='Send')
 
-        // ADD USER
-        h2 Add User
-        #addUser
-            fieldset
-                input#inputUserName(type='text', placeholder='Username')
-                input#inputUserEmail(type='text', placeholder='Email')
-                br
-                input#inputUserFullname(type='text', placeholder='Full Name')
-                input#inputUserAge(type='text', placeholder='Age')
-                br
-                input#inputUserLocation(type='text', placeholder='Location')
-                input#inputUserGender(type='text', placeholder='gender')
-                br
-                button#btnAddUser Add User
-        // /ADD USER
+    .clr
+      h3 Change your name
+      p Your current user name is {{name}}
+      form(ng-submit='changeName()')
+        input(ng-model='newName')
+        input(type='submit', value='Change Name')
 
-    // /WRAPPER
+  script(src='js/lib/angular/angular.js')
+  script(src='/socket.io/socket.io.js')
+  script(src='js/app.js')
+  script(src='js/services.js')
+  script(src='js/controllers.js')
+  script(src='js/filters.js')
+  script(src='js/directives.js')
