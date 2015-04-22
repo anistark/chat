@@ -37,11 +37,10 @@ app.configure('production', function(){
 // Routes
 
 app.get('/', routes.index);
-app.get('/home', routes.home);
 app.get('/partials/:name', routes.partials);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.home);
+app.get('*', routes.index);
 
 // Socket.io Communication
 

@@ -1,31 +1,28 @@
-extends layout
+extends chat_layout
 
-block body
-  h1 Chat App
-  div(ng-controller='AppCtrl')
-    .col
-      h3 Messages
-      .overflowable
-        p(ng-repeat='message in messages',
-          ng-class='{alert: message.user == "chatroom"}') {{message.user}}: {{message.text}}
+block content
+  div(class="container col-md-12" id="main")
+    div(ng-controller='AppCtrl')
+      div(class="col-md-9 chat-wind")
+        .overflowable
+          p(ng-repeat='message in messages',
+            ng-class='{alert: message.user == "chatroom"}') {{message.user}}: {{message.text}}
 
-    .col
-      h3 Users
-      .overflowable
-        p(ng-repeat='user in users') {{user}}
+      div(class="col-md-3 chat-members")
+        .overflowable
+          p(ng-repeat='user in users') {{user}}
 
-    .clr
-      form(ng-submit='sendMessage()')
-        | Message: 
-        input(size='60', ng-model='message')
-        input(type='submit', value='Send')
-
-    .clr
-      h3 Change your name
-      p Your current user name is {{name}}
-      form(ng-submit='changeName()')
-        input(ng-model='newName')
-        input(type='submit', value='Change Name')
+      div(class="col-md-12 text-center chat-footer")
+        hr
+        div(class="col-md-2 text-center")
+          form(ng-submit='changeName()')
+            input(class="form-control" placeholder="{{name}}" value="{{name}}" ng-model='newName')
+            input(type='submit', value='Change Name' hidden)
+        form(ng-submit='sendMessage()')
+          div(class="col-md-8")
+            input(class="form-control" size='60', ng-model='message')
+          div(class="col-md-2")
+            input(class="btn btn-success" type='submit', value='Send')
 
   script(src='js/lib/angular/angular.js')
   script(src='/socket.io/socket.io.js')
