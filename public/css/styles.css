@@ -97,6 +97,9 @@ h3,h4,h5 {
  #subnav {
   padding-top: 0px;
  }
+ .chat-footer {
+ 	padding-bottom: 0px;
+ }
 }
 
 #main {
@@ -105,4 +108,7 @@ h3,h4,h5 {
 
 .chat-footer {
 	padding-bottom: 20px;
+	position:fixed;
+	width:100%;
+	z-index: 5;
 }

@@ -41,7 +41,7 @@ app.get('/home', routes.home);
 app.get('/partials/:name', routes.partials);
 
 // redirect all others to the index (HTML5 history)
-app.get('*', routes.index);
+app.get('*', routes.home);
 
 // Socket.io Communication
 
