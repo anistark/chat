@@ -107,8 +107,11 @@ h3,h4,h5 {
 }
 
 .chat-footer {
-	padding-bottom: 20px;
+	padding: 5px;
 	position:fixed;
 	width:100%;
 	z-index: 5;
+	bottom: 0px;
+	margin: 2px;
+	background-color: #ccc;
 }
