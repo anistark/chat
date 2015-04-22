@@ -34,20 +34,57 @@ html(ng-app="myApp")
             div(class="col-md-12")
                 div(class="navbar-header")
                     a(href="/" style="margin-left:15px;" class="navbar-btn btn btn-default btn-plus dropdown-toggle" data-toggle="dropdown"): i(class="glyphicon glyphicon-home" style="color:#dd1111;")  Home
-                    ul(class="nav dropdown-menu")
-                        li: a(href="#") i(class="glyphicon glyphicon-user" style="color:#1111dd;") Profile
-                        li: a(href="#") i(class=""glyphicon glyphicon-dashboard" style="color:#0000aa;") Dashboard
+                    //
+                        ul(class="nav dropdown-menu")
+                            li: a(href="#") i(class="glyphicon glyphicon-user" style="color:#1111dd;") Profile
+                            li: a(href="#") i(class=""glyphicon glyphicon-dashboard" style="color:#0000aa;") Dashboard
 
                     button(type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse2")
                         span(class="sr-only")
                         span(class="icon-bar")
                         span(class="icon-bar")
                         span(class="icon-bar")
-            //
+            
                 div(class="collapse navbar-collapse" id="navbar-collapse2")
                     ul(class="nav navbar-nav navbar-right")
-                        li: a(href="#") Posts
                         li: a(href="#loginModal" role="button" data-toggle="modal") Login
                         li: a(href="#aboutModal" role="button" data-toggle="modal") About
 
         block content
+
+        div(id="aboutModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true")
+            div(class="modal-dialog")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        button(type="button" class="close" data-dismiss="modal" aria-hidden="true") x
+                        h2(class="text-center") About
+                    div(class="modal-body")
+                        div(class="col-md-12 text-center")
+                            p   Under Developement. Hang on.
+                            |   Working on it.
+                    div(class="modal-footer")
+                        button(class="btn btn-info" data-dismiss="modal" aria-hidden="true") OK
+
+        div(id="loginModal" class="modal fade" tabindex="-1" role="dialog" aria-hidden="true")
+            div(class="modal-dialog")
+                div(class="modal-content")
+                    div(class="modal-header")
+                        button(type="button" class="close" data-dismiss="modal" aria-hidden="true") x
+                        h2(class="text-center") Login
+                    div(class="modal-body")
+                        div(class="col-md-12 text-center")
+                            p   Under Developement. Hang on.
+                            |   Working on it.
+                    div(class="modal-footer")
+                        button(class="btn btn-info" data-dismiss="modal" aria-hidden="true") OK
+
+        script(src='js/lib/angular/angular.js')
+        script(src='/socket.io/socket.io.js')
+        script(src='js/app.js')
+        script(src='js/services.js')
+        script(src='js/controllers.js')
+        script(src='js/filters.js')
+        script(src='js/directives.js')
+        script(src='js/jquery.min.js')
+        script(src='js/bootstrap.min.js')
+        script(src='js/scripts.js')
