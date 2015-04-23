@@ -17,7 +17,7 @@ var userNames = (function () {
       nextUserId = 1;
 
     do {
-      name = 'Guest ' + nextUserId;
+      name = 'Me ' + nextUserId;
       nextUserId += 1;
     } while (!claim(name));
 

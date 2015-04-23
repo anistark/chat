@@ -4,13 +4,13 @@ block content
   div(class="container col-md-12" id="main")
     div(ng-controller='AppCtrl')
       div(class="row")
-        div(class="col-md-10 chat-wind")
-          .overflowable
+        div(class="col-md-10")
+          div(class="overflowable chat-wind")
             p(ng-repeat='message in messages',
               ng-class='{alert: message.user == "chatroom"}') {{message.user}}: {{message.text}}\
 
-        div(class="col-md-2 chat-members")
-          .overflowable
+        div(class="col-md-2")
+          div(class="overflowable chat-members")
             p(ng-repeat='user in users') {{user}}
 
       hr
@@ -20,7 +20,7 @@ block content
             a(href="#changeUsername" role="button" data-toggle="modal"): span(class="btn btn-warning") {{name}}
           form(ng-submit='sendMessage()')
             div(class="col-md-8")
-              input(class="form-control" size='60', ng-model='message')
+              input(class="form-control" size='140', ng-model='message')
             div(class="col-md-2")
               input(class="btn btn-success" type='submit', value='Send')
 
