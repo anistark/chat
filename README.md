@@ -1,7 +1,5 @@
-# Chat
-Trying out nodejs with mongodb
+# Honk
+A Chatting Application.
 
-
-
-npm install
+##Under Developement
 
