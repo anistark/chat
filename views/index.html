@@ -1,0 +1,65 @@
+<!doctype html>
+<html>
+  <head>
+    <title>Honk</title>
+    <!-- Polymer -->
+    <script src="/bower_components/webcomponentsjs/webcomponents.min.js"></script>
+
+    <link rel="import" href="/bower_components/pubnub-polymer/pubnub-element.html">
+    <link rel="import" href="/bower_components/core-scaffold/core-scaffold.html">
+    <link rel="import" href="/bower_components/core-item/core-item.html">
+    <link rel="import" href="/bower_components/paper-input/paper-input.html">
+    <link rel="import" href="/bower_components/paper-fab/paper-fab.html">
+
+    <link rel="stylesheet" type="text/css" href="/public/css/style.css">
+  </head>
+  <body unresolved fullbleed>
+    <!-- <ul id="messages"></ul>
+    <form action="">
+      <input id="m" autocomplete="off" /><button>Send</button>
+    </form> -->
+<template is="auto-binding">
+  <core-scaffold>
+    <core-header-panel navigation flex>
+        <core-toolbar id="navheader" class="tall">
+          <div class="middle avatar" style="background-image: url(/public/images/abstract.jpg)"></div>
+            <div class="bottom uuid">Hey</div>
+        </core-toolbar>
+
+        <section layout vertical id="onlineList">
+          <core-item label="Online Now" class="subdue" layout horizontal center></core-item>
+
+          <template>
+            <core-item></core-item>
+          </template>
+        </section>
+      </core-header-panel>
+
+      <div tool layout horizontal flex>
+        <div flex>Honk Room</div>
+        <core-icon icon="account-circle"></core-icon><span>10</span>
+      </div>
+
+      <section layout vertical fit id="chat">
+      <div flex class="chat-list">
+        <template id="messages">
+          <x-chat-list></x-chat-list>
+        </template>
+      </div>
+      <div class="shim"></div>
+
+      <div class="send-message" layout horizontal>
+          <paper-input flex label="Type message..." id="input"></paper-input>
+          <paper-fab icon="send" id="sendButton"></paper-fab>
+        </div>
+      </section>
+  </core-scaffold>
+
+</template>
+
+    <script src="https://cdn.socket.io/socket.io-1.2.0.js"></script>
+    <script src="http://code.jquery.com/jquery-1.11.1.js"></script>
+    <!--script src="/public/js/mainsocket.js"></script-->
+    <script src="/public/js/app.js"></script>
+  </body>
+</html>
