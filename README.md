@@ -11,3 +11,9 @@ Setup the project:
 5.	bower install Polymer/paper-input#^0.5
 6.	bower install Polymer/paper-fab#^0.5
 
+To start the Project
+```
+ npm start
+```
+
+Come join US!!
